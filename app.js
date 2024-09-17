@@ -55,18 +55,13 @@ if(nyertel){console.log("grat!")}
 // 8.feladat
 pont = 1
 
-if(0< pont <= 49){
-    console.log("Elégtelen (1)");
-}else if(pont<=62){
-    console.log("Elégséges (2)");
-}else if(pont<=75){
-    console.log(Közepes (3));
-}else if(pont <=88){
-    console.log(Jó (4))
-}else if(pont <= 100){
-    console.log("Jeles (5)");
-}else{
-    console.log("Ervenytelen");
+switch(true){
+    case (0 < pont && pont <= 49): console.log("Elégtelen (1)!"); break;
+    case (50 < pont && pont <= 62): console.log("Elégséges (2)!"); break;
+    case (62 < pont && pont <= 75): console.log("Közepes (3)!"); break;
+    case (75 < pont && pont <= 88): console.log("Jó (4)!"); break;
+    case (88 < pont && pont <= 100): console.log("Jeles (5)!"); break;
+    default: console.log("gatya...?");
 }
 
 // 9.feladat
@@ -81,13 +76,37 @@ for(let i = 1; i <= 10; i++){
 }
 
 // 10.feladat
-magassag = 5
-
-for(let i = 1;i<=5;i++){
-    console.log([" " * space].join("") + ["*" * i].join())
+magassag = 50
+//     *
+//    ***
+//   *****
+//  *******
+// *********
+for(let i = 0;i<=magassag;i++){
+    console.log(" ".repeat(magassag-i) + "*".repeat(i*2+1))
 }
 // 11.feladat
+a = 5
+b = 10
+muvelet = "*"
+
+switch(muvelet){
+    case "+": console.log(a + b); break;
+    case "-": console.log(a - b); break;
+    case "*": console.log(a * b); break;
+    case "/": if(b !== 0){console.log(a / b);}else{console.log("a 7szaz at!!!!!");} break;
+}
 // 12.feladat
+let jegyek = [1,4,3,4,4,4,5,2,3]
+
+atlag = 0
+
+// jegyek.forEach(x => atlag += x);
+jegyek.filter(x => {atlag+=x;return true;})
+console.log(jegyek.length)
+// atlag /= jegyek.length();
+
+console.log(atlag / jegyek.length);
 // 13.feladat
 // 14.feladat
 // 15.feladat
